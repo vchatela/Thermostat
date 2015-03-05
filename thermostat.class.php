@@ -1,20 +1,20 @@
 <?php
 
 /*
- @nom: Modele
- @auteur: Idleman (idleman@idleman.fr)
- @description:  Modele de classe pour les plugins
+ @nom: Thermostat
+ @auteur: Valentin (idleman@idleman.fr)
+ @description:  Module pour le thermostat
  */
 
 //Ce fichier permet de gerer vos donnees en provenance de la base de donnees
 
-//Il faut changer le nom de la classe ici (je sens que vous allez oublier)
-class Modele extends SQLiteEntity{
+//Il faut changer le nom de la classe ici 
+class Thermostat extends SQLiteEntity{
 
 	
 	protected $id,$string,$integer; //Pour rajouter des champs il faut ajouter les variables ici...
-	protected $TABLE_NAME = 'plugin_modele'; 	//Penser a mettre le nom du plugin et de la classe ici
-	protected $CLASS_NAME = 'modele';
+	protected $TABLE_NAME = 'plugin_thermostat'; 	//Penser a mettre le nom du plugin et de la classe ici
+	protected $CLASS_NAME = 'thermostat';
 	protected $object_fields = 
 	array( //...Puis dans l'array ici mettre nom du champ => type
 		'id'=>'key',
