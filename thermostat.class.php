@@ -2,7 +2,7 @@
 
 /*
  @nom: Thermostat
- @auteur: Valentin (idleman@idleman.fr)
+ @auteur: Valentin (valentindu64@hotmail.fr)
  @description:  Module pour le thermostat
  */
 
