@@ -9,13 +9,9 @@
 */
 
 //Si vous utiliser la base de donnees a ajouter
-//include('thermostat.class.php');
-Plugin::addCss("/yana-server/plugins/thermostat/css/style.css"); 
-Plugin::addJs("/yana-server/plugins/thermostat/js/highstock.js"); 
-Plugin::addJs("/yana-server/plugins/thermostat/js/highcharts.js"); 
-Plugin::addJs("/yana-server/plugins/thermostat/js/exporting.js"); 
-Plugin::addJs("/yana-server/plugins/thermostat/js/main.js"); 
+Plugin::addCss("/yana-server/plugins/Thermostat/css/style.css"); 
 
+include 'connection.php';
 //Cette fonction va generer un nouveau element dans le menu
 function test_plugin_menu(&$menuItems){
 	global $_;
@@ -93,16 +89,6 @@ mysql_free_result($req);
 $average = substr($average, 0, -1);
 
 return $average;
-}
-function connection_database(){
-// connexion a la base
-        $base = mysql_connect('localhost', 'userdist', '123456');
-        mysql_select_db('temperature',$base);
-
-// lancement de la requete
-        $sql = 'SELECT * FROM Temperature';
-        $req = mysql_query($sql) or die ('Erreur SQL ! <br />' .$sql.'<br />'.mysql_error());
-return $req;
 }
 
 function resultat_database(){
