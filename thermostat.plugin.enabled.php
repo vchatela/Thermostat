@@ -196,7 +196,8 @@ function drawChart() {
         },
         vAxis: {
           title: 'Temperature (°C)'
-        }
+        },
+		color: '#e2431e'
       };
 
       var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
