@@ -101,7 +101,7 @@ function resultat_database(){
 		// on récupère l'heure et la valeur de la temperature
 		//['2016-01-20 10:27',13.312],['2016-01-20 10:58',13.937]
 		// [ new Date(year, month, day, hours, minutes) , 'temp']
-		$data .= ('[ new Date(' .substr($row[1],0,4). ',' .substr($row[1],5,2). ',' .substr($row[1],8,2). ',' .substr($row[2],0,-6). ',' .substr($row[2],3,2). '),'.$row[3].'],');
+		$data .= ('[ new Date(' .substr($row[1],0,4). ',' .substr($row[1],5,2). ',' .substr($row[1],8,2). ',' .substr($row[2],0,-6). ',' .substr($row[2],3,2). '),'.$row[3].',' .$row[4]. '],');
 		$compteur += 1;
 	}
 $data = substr($data, 0, -1);
@@ -175,6 +175,7 @@ function drawBasic() {
       var data = new google.visualization.DataTable();
       data.addColumn('datetime', 'Date - Heure');
       data.addColumn('number', 'Temperature');
+	  data.addColumn('boolean', 'HeaterOn');
 
       data.addRows([
 		<?php echo resultat_database();?>
