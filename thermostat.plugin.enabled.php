@@ -101,7 +101,11 @@ function resultat_database(){
 		// on récupère l'heure et la valeur de la temperature
 		//['2016-01-20 10:27',13.312],['2016-01-20 10:58',13.937]
 		// [ new Date(year, month, day, hours, minutes) , 'temp']
-		$data .= ('[ new Date(' .substr($row[1],0,4). ',' .substr($row[1],5,2). ',' .substr($row[1],8,2). ',' .substr($row[2],0,-6). ',' .substr($row[2],3,2). '),'.$row[3].',' .$row[4]. '],');
+		if($row[4]==0)
+			$boolean = True;
+		else
+			$boolean = False;
+		$data .= ('[ new Date(' .substr($row[1],0,4). ',' .substr($row[1],5,2). ',' .substr($row[1],8,2). ',' .substr($row[2],0,-6). ',' .substr($row[2],3,2). '),'.$row[3].',' .$boolean. '],');
 		$compteur += 1;
 	}
 $data = substr($data, 0, -1);
