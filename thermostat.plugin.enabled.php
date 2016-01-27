@@ -185,16 +185,12 @@ function drawChart() {
 		title: 'Temperature dans la chambre',
 		width:1000,
         height:500,
-		series:{
-			 // Gives each series an axis name that matches the Y-axis below.
-          0: {targetAxisIndex: 0},
-          1: {targetAxisIndex: 1}
-		},
-		vAxes:{
-			// Adds titles to each axis.
-          0: {title: 'Temperature ( °C)'},
-          1: {title: 'Etat du chauffage'}
-		}
+		hAxis: {
+          title: 'Date'
+        },
+        vAxis: {
+          title: 'Temperature (°C)'
+        }
       };
 
       var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
