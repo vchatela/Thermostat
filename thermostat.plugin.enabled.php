@@ -185,7 +185,7 @@ crosshair: { trigger: 'both' },
 'width':1000,
                      'height':500,
         hAxis: {
-          title: 'Heure'
+          title: 'Date'
         },
         vAxis: {
           title: 'Temperatre (°C)'
