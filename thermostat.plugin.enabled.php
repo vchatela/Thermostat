@@ -182,19 +182,18 @@ function drawChart() {
       ]);
 
       var options = {
+		title: 'Temperature dans la chambre'
 		width:1000,
         height:500,
 		series:{
 			 // Gives each series an axis name that matches the Y-axis below.
-          0: {axis: 'Date1'},
-          1: {axis: 'Date2'}
+          0: {targetAxisIndex: 0},
+          1: {targetAxisIndex: 1}
 		},
-		axes:{
-			// Adds labels to each axis; they don't have to match the axis names.
-          y: {
-            Data1: {label: 'Temperature ( °C)'},
-            Data2: {label: 'Etat du chauffage'}
-          }
+		vAxes:{
+			// Adds titles to each axis.
+          0: {title: 'Temperature ( °C)'},
+          1: {title: 'Etat du chauffage'}
 		}
       };
 
