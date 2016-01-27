@@ -167,8 +167,8 @@ function test_plugin_page($_){
 	</div>
 
  <script type="text/javascript">
-google.charts.load('current', {'packages':['line', 'corechart']});
-google.charts.setOnLoadCallback(drawChart);
+google.load('visualization', '1', {packages: ['corechart', 'line']});
+google.setOnLoadCallback(drawChart);
 
 function drawChart() {
 
@@ -182,9 +182,6 @@ function drawChart() {
       ]);
 
       var options = {
-		chart: {
-			title: 'Temperature dans la chambre'
-        },
 		width:1000,
         height:500,
 		series:{
@@ -201,7 +198,7 @@ function drawChart() {
 		}
       };
 
-      var chart = new google.charts.Line(document.getElementById('chart_div'));
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
 
       chart.draw(data, options);
     }
