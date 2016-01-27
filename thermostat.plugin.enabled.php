@@ -166,7 +166,7 @@ function test_plugin_page($_){
 
 	</div>
 
- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js">
+ <script type="text/javascript">
 google.charts.load('current', {'packages':['line', 'corechart']});
 google.charts.setOnLoadCallback(drawChart);
 
