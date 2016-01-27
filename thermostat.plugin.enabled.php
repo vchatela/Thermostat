@@ -99,7 +99,9 @@ function resultat_database(){
 	while ($row = mysql_fetch_array($req) and $compteur <337){
 		//traiter les données
 		// on récupère l'heure et la valeur de la temperature
-		$data .= ('[\'' .substr($row[1],5). ' ' .substr($row[2],0,-3). '\','.$row[3].'],');
+		//['2016-01-20 10:27',13.312],['2016-01-20 10:58',13.937]
+		// [ new Date(year, month, day, hours, minutes) , 'temp']
+		$data .= ('[ new Date(' .substr($row[1],0,4). ',' .substr($row[1],5,2). ',' .substr($row[1],8,2). ',' .substr($row[2],0,-6). ',' .substr($row[2],3,2). '),'.$row[3].'],');
 		$compteur += 1;
 	}
 $data = substr($data, 0, -1);
@@ -171,7 +173,7 @@ google.setOnLoadCallback(drawBasic);
 function drawBasic() {
 
       var data = new google.visualization.DataTable();
-      data.addColumn('string', 'Date - Heure');
+      data.addColumn('datetime', 'Date - Heure');
       data.addColumn('number', 'Temperature');
 
       data.addRows([
