@@ -182,7 +182,7 @@ function drawChart() {
       ]);
 
       var options = {
-		title: 'Temperature dans la chambre'
+		title: 'Temperature dans la chambre',
 		width:1000,
         height:500,
 		series:{
