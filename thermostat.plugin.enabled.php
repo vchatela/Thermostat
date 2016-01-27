@@ -183,11 +183,10 @@ function drawChart() {
 
       var options = {
 		chart: {
-        title: 'Temperature dans la chambre'
+			title: 'Temperature dans la chambre'
         },
-		crosshair: { trigger: 'both' },
-		'width':1000,
-        'height':500,
+		width:1000,
+        height:500,
 		series:{
 			 // Gives each series an axis name that matches the Y-axis below.
           0: {axis: 'Date1'},
