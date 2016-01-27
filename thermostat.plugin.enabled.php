@@ -166,11 +166,11 @@ function test_plugin_page($_){
 
 	</div>
 
- <script type="text/javascript">
-google.load('visualization', '1', {packages: ['corechart', 'line']});
-google.setOnLoadCallback(drawBasic);
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js">
+google.charts.load('current', {'packages':['line', 'corechart']});
+google.charts.setOnLoadCallback(drawChart);
 
-function drawBasic() {
+function drawChart() {
 
       var data = new google.visualization.DataTable();
       data.addColumn('datetime', 'Date - Heure');
@@ -182,18 +182,27 @@ function drawBasic() {
       ]);
 
       var options = {
-crosshair: { trigger: 'both' },
-'width':1000,
-                     'height':500,
-        hAxis: {
-          title: 'Date'
+		chart: {
+        title: 'Temperature dans la chambre'
         },
-        vAxis: {
-          title: 'Temperatre (°C)'
-        }
+		crosshair: { trigger: 'both' },
+		'width':1000,
+        'height':500,
+		series:{
+			 // Gives each series an axis name that matches the Y-axis below.
+          0: {axis: 'Date1'},
+          1: {axis: 'Date2'}
+		},
+		axes:{
+			// Adds labels to each axis; they don't have to match the axis names.
+          y: {
+            Data1: {label: 'Temperature ( °C)'},
+            Data2: {label: 'Etat du chauffage'}
+          }
+		}
       };
 
-      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      var chart = new google.charts.Line(document.getElementById('chart_div'));
 
       chart.draw(data, options);
     }
