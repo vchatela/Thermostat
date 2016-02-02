@@ -107,7 +107,8 @@ function resultat_database(){
 		else{
 			$boolean = 'true';
 		}
-		$data .= ('[ new Date(' .substr($row[1],0,4). ',' .substr($row[1],5,2). ',' .substr($row[1],8,2). ',' .substr($row[2],0,-6). ',' .substr($row[2],3,2). '),'.$row[3].',' .$boolean. '],');
+		$month = substr($row[1],5,2) -1;
+		$data .= ('[ new Date(' .substr($row[1],0,4). ',' .$month. ',' .substr($row[1],8,2). ',' .substr($row[2],0,-6). ',' .substr($row[2],3,2). '),'.$row[3].',' .$boolean. '],');
 		$compteur += 1;
 	}
 $data = substr($data, 0, -1);
